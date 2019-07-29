@@ -12,7 +12,7 @@ namespace goldStore.Areas.Panel.Controllers
     public class BrandController : Controller
     {
         // GET: Panel/Brand
-        BrandRepository repository = new BrandRepository(new goldstoreEntities());
+        BrandRepository repository = new BrandRepository(new goldstore2Entities());
 
         public ActionResult Index()
         {

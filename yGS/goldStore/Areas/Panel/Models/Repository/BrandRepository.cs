@@ -12,10 +12,10 @@ namespace goldStore.Areas.Panel.Models.Repository
     public class BrandRepository : IRepository<brand>
     {
 
-        private goldstoreEntities _context;
+        private goldstore2Entities _context;
       // private goldstoreEntities1 goldstoreEntities1;
 
-        public BrandRepository(goldstoreEntities Context)
+        public BrandRepository(goldstore2Entities Context)
         {
             this._context = Context;
         }

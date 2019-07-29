@@ -9,9 +9,9 @@ namespace goldStore.Areas.Panel.Models.Repository
 {
     public class CategoryRepository : IRepository<category>
     {
-        private goldstoreEntities _context;
+        private goldstore2Entities _context;
 
-        public CategoryRepository(goldstoreEntities Context)
+        public CategoryRepository(goldstore2Entities Context)
         {
             this._context = Context;
         }

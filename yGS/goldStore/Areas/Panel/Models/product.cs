@@ -25,7 +25,7 @@ namespace goldStore.Areas.Panel.Models
         public Nullable<decimal> oldPrice { get; set; }
         public Nullable<decimal> price { get; set; }
         public Nullable<int> stock { get; set; }
-        public string description { get; set; }
+        public string description0 { get; set; }
         public Nullable<int> categoryId { get; set; }
         public Nullable<int> brandId { get; set; }
     

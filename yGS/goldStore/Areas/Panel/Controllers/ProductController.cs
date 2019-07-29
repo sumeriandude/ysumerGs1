@@ -12,7 +12,7 @@ namespace goldStore.Areas.Panel.Controllers
     public class ProductController : Controller
     {
 
-        ProductRepository repository = new ProductRepository( new Models.goldstoreEntities());
+        ProductRepository repository = new ProductRepository( new Models.goldstore2Entities());
         // GET: Panel/Product
         public ActionResult Index()
         {

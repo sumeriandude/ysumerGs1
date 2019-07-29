@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="goldstoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="goldstore2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="brand">
           <Key>
             <PropertyRef Name="brandId" />
@@ -30,7 +30,7 @@
           <Property Name="oldPrice" Type="decimal" Precision="8" Scale="2" />
           <Property Name="price" Type="decimal" Precision="8" Scale="2" />
           <Property Name="stock" Type="int" />
-          <Property Name="description" Type="text" />
+          <Property Name="description0" Type="text" />
           <Property Name="categoryId" Type="int" />
           <Property Name="brandId" Type="int" />
         </EntityType>
@@ -54,7 +54,7 @@
             <PropertyRef Name="userId" />
           </Key>
           <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="firstName" Type="varchar" MaxLength="50" />
+          <Property Name="firstNAme" Type="varchar" MaxLength="50" />
           <Property Name="lastName" Type="varchar" MaxLength="50" />
           <Property Name="email" Type="varchar" MaxLength="100" />
           <Property Name="password" Type="varchar(max)" />
@@ -66,7 +66,7 @@
           <Property Name="hostName" Type="varchar" MaxLength="50" />
           <Property Name="isActive" Type="bit" />
           <Property Name="loginAttempt" Type="int" />
-          <Property Name="createdDate" Type="datetime" />
+          <Property Name="createDate" Type="datetime" />
           <Property Name="loginTime" Type="datetime" />
           <Property Name="isMailVerified" Type="bit" />
           <Property Name="roleId" Type="int" />
@@ -119,7 +119,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="goldstoreModelStoreContainer">
+        <EntityContainer Name="goldstore2ModelStoreContainer">
           <EntitySet Name="brand" EntityType="Self.brand" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
@@ -147,7 +147,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="goldstoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="goldstore2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="brand">
           <Key>
             <PropertyRef Name="brandId" />
@@ -175,7 +175,7 @@
           <Property Name="oldPrice" Type="Decimal" Precision="8" Scale="2" />
           <Property Name="price" Type="Decimal" Precision="8" Scale="2" />
           <Property Name="stock" Type="Int32" />
-          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description0" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="categoryId" Type="Int32" />
           <Property Name="brandId" Type="Int32" />
           <NavigationProperty Name="brand" Relationship="Self.FK__product__brandId__15502E78" FromRole="product" ToRole="brand" />
@@ -204,7 +204,7 @@
             <PropertyRef Name="userId" />
           </Key>
           <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="firstNAme" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -216,7 +216,7 @@
           <Property Name="hostName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="isActive" Type="Boolean" />
           <Property Name="loginAttempt" Type="Int32" />
-          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="createDate" Type="DateTime" Precision="3" />
           <Property Name="loginTime" Type="DateTime" Precision="3" />
           <Property Name="isMailVerified" Type="Boolean" />
           <Property Name="roleId" Type="Int32" />
@@ -270,7 +270,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="goldstoreEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="goldstore2Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="brand" EntityType="Self.brand" />
           <EntitySet Name="category" EntityType="Self.category" />
           <EntitySet Name="product" EntityType="Self.product" />
@@ -299,9 +299,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="goldstoreModelStoreContainer" CdmEntityContainer="goldstoreEntities">
+        <EntityContainerMapping StorageEntityContainer="goldstore2ModelStoreContainer" CdmEntityContainer="goldstore2Entities">
           <EntitySetMapping Name="brand">
-            <EntityTypeMapping TypeName="goldstoreModel.brand">
+            <EntityTypeMapping TypeName="goldstore2Model.brand">
               <MappingFragment StoreEntitySet="brand">
                 <ScalarProperty Name="brandId" ColumnName="brandId" />
                 <ScalarProperty Name="brandName" ColumnName="brandName" />
@@ -310,7 +310,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="category">
-            <EntityTypeMapping TypeName="goldstoreModel.category">
+            <EntityTypeMapping TypeName="goldstore2Model.category">
               <MappingFragment StoreEntitySet="category">
                 <ScalarProperty Name="categoryId" ColumnName="categoryId" />
                 <ScalarProperty Name="categoryName" ColumnName="categoryName" />
@@ -319,21 +319,21 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="product">
-            <EntityTypeMapping TypeName="goldstoreModel.product">
+            <EntityTypeMapping TypeName="goldstore2Model.product">
               <MappingFragment StoreEntitySet="product">
                 <ScalarProperty Name="productId" ColumnName="productId" />
                 <ScalarProperty Name="productName" ColumnName="productName" />
                 <ScalarProperty Name="oldPrice" ColumnName="oldPrice" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="stock" ColumnName="stock" />
-                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="description0" ColumnName="description0" />
                 <ScalarProperty Name="categoryId" ColumnName="categoryId" />
                 <ScalarProperty Name="brandId" ColumnName="brandId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="productImage">
-            <EntityTypeMapping TypeName="goldstoreModel.productImage">
+            <EntityTypeMapping TypeName="goldstore2Model.productImage">
               <MappingFragment StoreEntitySet="productImage">
                 <ScalarProperty Name="imageId" ColumnName="imageId" />
                 <ScalarProperty Name="image" ColumnName="image" />
@@ -342,7 +342,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="role">
-            <EntityTypeMapping TypeName="goldstoreModel.role">
+            <EntityTypeMapping TypeName="goldstore2Model.role">
               <MappingFragment StoreEntitySet="role">
                 <ScalarProperty Name="roleId" ColumnName="roleId" />
                 <ScalarProperty Name="roleName" ColumnName="roleName" />
@@ -350,10 +350,10 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="user">
-            <EntityTypeMapping TypeName="goldstoreModel.user">
+            <EntityTypeMapping TypeName="goldstore2Model.user">
               <MappingFragment StoreEntitySet="user">
                 <ScalarProperty Name="userId" ColumnName="userId" />
-                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="firstNAme" ColumnName="firstNAme" />
                 <ScalarProperty Name="lastName" ColumnName="lastName" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="password" ColumnName="password" />
@@ -365,7 +365,7 @@
                 <ScalarProperty Name="hostName" ColumnName="hostName" />
                 <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="loginAttempt" ColumnName="loginAttempt" />
-                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
                 <ScalarProperty Name="loginTime" ColumnName="loginTime" />
                 <ScalarProperty Name="isMailVerified" ColumnName="isMailVerified" />
                 <ScalarProperty Name="roleId" ColumnName="roleId" />

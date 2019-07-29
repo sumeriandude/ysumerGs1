@@ -15,7 +15,7 @@ namespace goldStore.Areas.Panel.Models
     public partial class user
     {
         public int userId { get; set; }
-        public string firstName { get; set; }
+        public string firstNAme { get; set; }
         public string lastName { get; set; }
         public string email { get; set; }
         public string password { get; set; }
@@ -27,7 +27,7 @@ namespace goldStore.Areas.Panel.Models
         public string hostName { get; set; }
         public Nullable<bool> isActive { get; set; }
         public Nullable<int> loginAttempt { get; set; }
-        public Nullable<System.DateTime> createdDate { get; set; }
+        public Nullable<System.DateTime> createDate { get; set; }
         public Nullable<System.DateTime> loginTime { get; set; }
         public Nullable<bool> isMailVerified { get; set; }
         public Nullable<int> roleId { get; set; }

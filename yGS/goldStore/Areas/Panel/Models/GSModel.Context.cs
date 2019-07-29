@@ -13,10 +13,10 @@ namespace goldStore.Areas.Panel.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class goldstoreEntities : DbContext
+    public partial class goldstore2Entities : DbContext
     {
-        public goldstoreEntities()
-            : base("name=goldstoreEntities")
+        public goldstore2Entities()
+            : base("name=goldstore2Entities")
         {
         }
     

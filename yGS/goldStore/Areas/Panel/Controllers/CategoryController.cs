@@ -13,7 +13,7 @@ namespace goldStore.Areas.Panel.Controllers
     { 
         
         // GET: Panel/Category
-        CategoryRepository repository = new CategoryRepository(new goldstoreEntities());
+        CategoryRepository repository = new CategoryRepository(new goldstore2Entities());
 
         public ActionResult Index()
         {
